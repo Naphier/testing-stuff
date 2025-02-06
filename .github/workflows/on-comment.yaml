@@ -2,6 +2,7 @@ on: issue_comment
 
 jobs: 
   deploy-dev:
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/deploy-dev' }}
     runs-on: ubuntu-latest
     name: Deploy dev
     steps:
